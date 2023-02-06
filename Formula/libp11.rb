@@ -1,4 +1,4 @@
-class Libp11AT11 < Formula
+class Libp11 < Formula
   desc "PKCS#11 wrapper library in C"
   homepage "https://github.com/OpenSC/libp11/wiki"
   url "https://github.com/OpenSC/libp11/releases/download/libp11-0.4.12/libp11-0.4.12.tar.gz"
@@ -16,11 +16,11 @@ class Libp11AT11 < Formula
     depends_on "automake" => :build
   end
 
-  keg_only :versioned_formula
-
   depends_on "pkg-config" => :build
   depends_on "libtool"
   depends_on "openssl@1.1"
+
+  conflicts_with "libp11"
 
   def install
     system "./bootstrap" if build.head?
