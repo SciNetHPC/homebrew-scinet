@@ -16,11 +16,11 @@ class Libp11AT11 < Formula
     depends_on "automake" => :build
   end
 
+  keg_only :versioned_formula
+
   depends_on "pkg-config" => :build
   depends_on "libtool"
   depends_on "openssl@1.1"
-
-  keg_only :versioned_formula
 
   def install
     system "./bootstrap" if build.head?
