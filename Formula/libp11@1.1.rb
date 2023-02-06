@@ -20,7 +20,7 @@ class Libp11AT11 < Formula
   depends_on "libtool"
   depends_on "openssl@1.1"
 
-  conflicts_with "libp11"
+  keg_only :versioned_formula
 
   def install
     system "./bootstrap" if build.head?
